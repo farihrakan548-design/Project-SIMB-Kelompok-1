@@ -2,12 +2,14 @@
 $current_page = basename($_SERVER['PHP_SELF']);
 ?>
 <div class="topbar-emergency">
-    <div>
-        <span class="pulse-dot"></span>
-        <strong>Info Siaga Banjir:</strong> Layanan Darurat Bebas Pulsa BNPB: <a href="tel:117">117</a> | Tanggap Bencana: <a href="tel:112">112</a>
-    </div>
-    <div>
-        <span>Pusat Edukasi & Kesiapsiagaan Masyarakat</span>
+    <div class="topbar-inner">
+        <div>
+            <span class="pulse-dot"></span>
+            <strong>Info Siaga Banjir:</strong> Layanan Darurat Bebas Pulsa BNPB: <a href="tel:117">117</a> | Tanggap Bencana: <a href="tel:112">112</a>
+        </div>
+        <div>
+            <span>Pusat Edukasi & Kesiapsiagaan Masyarakat</span>
+        </div>
     </div>
 </div>
 
@@ -15,7 +17,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <nav class="navbar">
         <a href="index.php" class="logo">
             <span class="logo-badge">SIAGA</span>
-            <span>Edukasi Banjir</span>
+            <span class="logo-text">Edukasi Banjir</span>
         </a>
 
         <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
@@ -37,8 +39,8 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 </li>
                 <li><a href="logout.php" class="btn-nav-logout">Keluar</a></li>
             <?php else: ?>
-                <li><a href="login.php" class="<?= ($current_page == 'login.php') ? 'active' : ''; ?>">Masuk</a></li>
-                <li><a href="register.php" class="btn btn-secondary" style="color: var(--primary); padding: 6px 14px; font-size: 13.5px;">Daftar Akun</a></li>
+                <li><a href="login.php" class="btn-nav-login <?= ($current_page == 'login.php') ? 'active' : ''; ?>">Masuk</a></li>
+                <li><a href="register.php" class="btn-nav-register">Daftar Akun</a></li>
             <?php endif; ?>
         </ul>
     </nav>

@@ -1,11 +1,11 @@
 /* ========================================================
    PORTAL EDUKASI BENCANA BANJIR - STYLESHEET
-   Desain human-friendly, bersih, modern, dan interaktif
+   Desain human-friendly, bersih, modern, dan rapi
    ======================================================== */
 
 :root {
-    --primary: #0f4c81;       /* Deep ocean blue */
-    --primary-hover: #0b375e;
+    --primary: #0f3b67;       /* Navy blue */
+    --primary-hover: #0b2d4f;
     --primary-light: #e0f2fe;
     --accent: #0284c7;        /* Sky blue */
     --warning: #f59e0b;       /* Amber alert */
@@ -41,18 +41,24 @@ body {
     min-height: 100vh;
 }
 
-/* --- Topbar Darurat --- */
+/* --- Topbar Darurat (Full Width) --- */
 .topbar-emergency {
-    background: #092c4c;
+    background: #061d33;
     color: #bae6fd;
     font-size: 13px;
-    padding: 7px 20px;
+    padding: 8px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    width: 100%;
+}
+
+.topbar-inner {
+    max-width: 1100px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .topbar-emergency .pulse-dot {
@@ -68,41 +74,32 @@ body {
 .topbar-emergency a {
     color: #fef08a;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
 }
 
-/* --- Navbar Utama --- */
+.topbar-emergency a:hover {
+    text-decoration: underline;
+}
+
+/* --- Header & Navbar Utama (Full Width Dark Navy) --- */
 .navbar-wrap {
-    background-color: #ffffff;
-    border-bottom: 1px solid var(--border);
+    background-color: #0f3b67;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    width: 100%;
 }
 
 .navbar {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 14px 20px;
-
-    font-family: Arial, sans-serif;
-}
-
-body {
-    background-color: #f4f6f9;
-    color: #333;
-    line-height: 1.6;
-}
-
-/* Navigasi */
-.navbar {
-    background-color: #1e3a8a;
-    color: #fff;
-    padding: 15px 30px;
+    padding: 12px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: transparent;
 }
 
 .navbar .logo {
@@ -110,50 +107,71 @@ body {
     align-items: center;
     gap: 10px;
     text-decoration: none;
-    color: var(--primary);
-    font-weight: 700;
-    font-size: 19px;
-    letter-spacing: -0.3px;
 }
 
 .logo-badge {
-    background: linear-gradient(135deg, #0284c7, #0f4c81);
-    color: #fff;
-    padding: 6px 10px;
+    background: #0284c7;
+    color: #ffffff;
+    padding: 5px 10px;
     border-radius: var(--radius-sm);
     font-size: 13px;
     font-weight: 800;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
+    letter-spacing: 0.5px;
+}
+
+.logo-text {
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
 }
 
 .navbar-nav {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 10px;
 }
 
 .navbar-nav a {
-    color: var(--muted);
+    color: #e0f2fe;
     text-decoration: none;
     font-weight: 500;
     font-size: 14.5px;
-    padding: 6px 10px;
+    padding: 7px 13px;
     border-radius: var(--radius-sm);
     transition: all 0.2s ease;
 }
 
 .navbar-nav a:hover {
-    color: var(--primary);
-    background-color: var(--primary-light);
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.12);
 }
 
 .navbar-nav a.active {
-    color: var(--primary);
-    background-color: var(--primary-light);
-    font-weight: 600;
+    background-color: #ffffff;
+    color: #0f3b67 !important;
+    font-weight: 700;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Tombol Khusus di Navbar */
+.btn-nav-login {
+    color: #ffffff !important;
+}
+
+.btn-nav-register {
+    background-color: #0284c7 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    padding: 7px 16px !important;
+    border-radius: var(--radius-sm) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.btn-nav-register:hover {
+    background-color: #0369a1 !important;
+    transform: translateY(-1px);
 }
 
 .user-badge {
@@ -163,40 +181,42 @@ body {
     padding: 5px 12px;
     border-radius: 20px;
     font-size: 13px;
-    background-color: #f1f5f9;
-    color: var(--dark);
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
     font-weight: 500;
-    border: 1px solid #e2e8f0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .user-badge .role-tag {
     font-size: 11px;
     text-transform: uppercase;
-    padding: 2px 6px;
+    padding: 2px 7px;
     border-radius: 10px;
     font-weight: 700;
 }
 
 .role-tag.admin {
-    background-color: #fef3c7;
-    color: #b45309;
+    background-color: #f59e0b;
+    color: #ffffff;
 }
 
 .role-tag.user {
-    background-color: #e0f2fe;
-    color: #0369a1;
+    background-color: #38bdf8;
+    color: #0f3b67;
 }
 
 .btn-nav-logout {
-    color: #ef4444 !important;
-    border: 1px solid #fecaca;
+    background-color: rgba(239, 68, 68, 0.15) !important;
+    color: #fca5a5 !important;
+    border: 1px solid rgba(239, 68, 68, 0.4);
     padding: 5px 12px !important;
     border-radius: var(--radius-sm);
-    font-size: 13.5px;
+    font-size: 13px;
 }
 
 .btn-nav-logout:hover {
-    background-color: #fee2e2 !important;
+    background-color: #ef4444 !important;
+    color: #ffffff !important;
 }
 
 .nav-toggle {
@@ -204,7 +224,7 @@ body {
     background: none;
     border: none;
     font-size: 24px;
-    color: var(--primary);
+    color: #ffffff;
     cursor: pointer;
 }
 
@@ -217,7 +237,7 @@ body {
     width: 100%;
 }
 
-/* --- Hero Banner Interaktif --- */
+/* --- Hero Banner --- */
 .hero-box {
     background: linear-gradient(135deg, #0f4c81 0%, #1e3a8a 60%, #0369a1 100%);
     color: #ffffff;
@@ -276,7 +296,7 @@ body {
     flex-wrap: wrap;
 }
 
-/* --- Tombol-tombol --- */
+/* --- Tombol Standar --- */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -343,9 +363,7 @@ body {
     width: 100%;
 }
 
-
-
-/* --- Tab Fase Bencana Interaktif --- */
+/* --- Tab Fase Bencana --- */
 .tabs-section {
     background: #ffffff;
     border: 1px solid var(--border);
@@ -390,6 +408,11 @@ body {
     animation: fadeIn 0.25s ease;
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .step-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -414,7 +437,7 @@ body {
     color: var(--muted);
 }
 
-/* --- Kartu Grid Materi / Kasus --- */
+/* --- Kartu Grid Materi & Kasus --- */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -437,69 +460,6 @@ body {
 .card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-md);
-
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-
-.navbar a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.navbar a:hover {
-    text-decoration: underline;
-}
-
-.navbar .btn-logout {
-    background-color: #dc2626;
-    padding: 6px 12px;
-    border-radius: 4px;
-}
-
-/* Kontainer Utama */
-.container {
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 0 20px;
-}
-
-/* Banner / Hero Home */
-.hero {
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 8px;
-    text-align: center;
-    border: 1px solid #ddd;
-    margin-bottom: 30px;
-}
-
-.hero h1 {
-    color: #1e3a8a;
-    margin-bottom: 15px;
-}
-
-/* Daftar Kartu Materi & Kasus */
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    padding: 20px;
 }
 
 .card img {
@@ -508,9 +468,6 @@ body {
     object-fit: cover;
     border-radius: var(--radius-sm);
     margin-bottom: 14px;
-
-    border-radius: 4px;
-    margin-bottom: 15px;
 }
 
 .card .badge {
@@ -544,7 +501,7 @@ body {
     flex: 1;
 }
 
-/* --- Filter & Live Search Toolbar --- */
+/* --- Filter & Pencarian Cepat --- */
 .toolbar-filter {
     background: #fff;
     border: 1px solid var(--border);
@@ -562,7 +519,6 @@ body {
 .search-input-wrap {
     flex: 1;
     min-width: 240px;
-    position: relative;
 }
 
 .search-input-wrap input {
@@ -595,68 +551,6 @@ body {
     background: var(--primary);
     color: #fff;
     border-color: var(--primary);
-}
-
-/* --- Tas Siaga Bencana (Interactive Checklist) --- */
-.checklist-card {
-    background: #ffffff;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    padding: 22px;
-    margin-bottom: 30px;
-    box-shadow: var(--shadow-sm);
-}
-
-.checklist-progress {
-    height: 10px;
-    background: #e2e8f0;
-    border-radius: 5px;
-    overflow: hidden;
-    margin: 12px 0 18px 0;
-}
-
-.checklist-bar {
-    height: 100%;
-    background: linear-gradient(90deg, #0284c7, #10b981);
-    width: 0%;
-    transition: width 0.3s ease;
-}
-
-.checklist-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 12px;
-}
-
-.check-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    padding: 10px 14px;
-    border-radius: var(--radius-sm);
-    cursor: pointer;
-    user-select: none;
-    font-size: 13.5px;
-    transition: all 0.2s;
-}
-
-.check-item:hover {
-    background: #f1f5f9;
-}
-
-.check-item input[type="checkbox"] {
-    width: 17px;
-    height: 17px;
-    cursor: pointer;
-}
-
-.check-item.done {
-    background: #ecfdf5;
-    border-color: #a7f3d0;
-    color: #065f46;
-    text-decoration: line-through;
 }
 
 /* --- Kotak Nomor Darurat --- */
@@ -748,48 +642,6 @@ body {
 
 .form-group {
     margin-bottom: 18px;
-
-    background-color: #e0f2fe;
-    color: #0369a1;
-    font-size: 12px;
-    padding: 4px 8px;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-.card h3 {
-    margin-bottom: 10px;
-    color: #111;
-}
-
-.card p {
-    color: #555;
-    font-size: 14px;
-}
-
-/* Form Login, Register, & Admin */
-.form-box {
-    background-color: #fff;
-    max-width: 450px;
-    margin: 40px auto;
-    padding: 30px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-}
-
-.form-box-large {
-    max-width: 700px;
-}
-
-.form-box h2 {
-    margin-bottom: 20px;
-    text-align: center;
-    color: #1e3a8a;
-}
-
-.form-group {
-    margin-bottom: 15px;
 }
 
 .form-group label {
@@ -798,9 +650,6 @@ body {
     font-weight: 600;
     font-size: 13.5px;
     color: var(--dark);
-
-    font-weight: bold;
-    font-size: 14px;
 }
 
 .form-group input,
@@ -821,11 +670,6 @@ body {
     outline: none;
     border-color: var(--accent);
     box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
-
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
 }
 
 .form-group textarea {
@@ -842,52 +686,6 @@ body {
     border: 1px solid var(--border);
     padding: 16px;
     box-shadow: var(--shadow-sm);
-    height: 120px;
-}
-
-.btn {
-    display: inline-block;
-    background-color: #1e3a8a;
-    color: #fff;
-    padding: 10px 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-.btn:hover {
-    background-color: #1d4ed8;
-}
-
-.btn-block {
-    width: 100%;
-}
-
-.btn-danger {
-    background-color: #dc2626;
-}
-
-.btn-danger:hover {
-    background-color: #b91c1c;
-}
-
-.btn-warning {
-    background-color: #d97706;
-}
-
-.btn-warning:hover {
-    background-color: #b45309;
-}
-
-/* Tabel Admin */
-.table-responsive {
-    overflow-x: auto;
-    background-color: #fff;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    padding: 15px;
 }
 
 table {
@@ -901,10 +699,6 @@ table td {
     padding: 12px 14px;
     text-align: left;
     font-size: 13.5px;
-    border: 1px solid #eee;
-    padding: 12px;
-    text-align: left;
-    font-size: 14px;
 }
 
 table th {
@@ -923,18 +717,11 @@ table tr:hover {
 table img {
     width: 75px;
     height: 52px;
-
-    color: #333;
-}
-
-table img {
-    width: 70px;
-    height: 50px;
     object-fit: cover;
     border-radius: 4px;
 }
 
-/* --- Pesan Notifikasi Alert --- */
+/* --- Notifikasi Alert --- */
 .alert {
     padding: 12px 16px;
     border-radius: var(--radius-sm);
@@ -947,17 +734,6 @@ table img {
 
 .alert-danger {
     background-color: #fef2f2;
-
-/* Pesan Notifikasi */
-.alert {
-    padding: 12px;
-    border-radius: 4px;
-    margin-bottom: 15px;
-    font-size: 14px;
-}
-
-.alert-danger {
-    background-color: #fee2e2;
     color: #991b1b;
     border: 1px solid #fecaca;
 }
@@ -985,7 +761,7 @@ footer a {
     font-weight: 600;
 }
 
-/* --- Responsif Mobile --- */
+/* --- Responsif Layar Mobile --- */
 @media (max-width: 768px) {
     .nav-toggle {
         display: block;
@@ -997,7 +773,7 @@ footer a {
         width: 100%;
         margin-top: 15px;
         padding-top: 15px;
-        border-top: 1px solid var(--border);
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
         align-items: stretch;
         gap: 8px;
     }
@@ -1024,20 +800,10 @@ footer a {
 
     .topbar-emergency {
         font-size: 12px;
+    }
+
+    .topbar-inner {
         justify-content: center;
         text-align: center;
     }
-
-    background-color: #dcfce7;
-    color: #166534;
-    border: 1px solid #bbf7d0;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    color: #777;
-    font-size: 13px;
 }
