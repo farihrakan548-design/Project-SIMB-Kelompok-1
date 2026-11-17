@@ -56,7 +56,6 @@ $result = mysqli_query($koneksi, $query);
                             <span style="font-size: 12px; color: var(--muted);">ID #<?= $row['id']; ?></span>
                         </div>
 
-=======
         <h2 style="margin-bottom: 10px; color: #1e3a8a;">Materi Edukasi Bencana Banjir</h2>
         <p style="margin-bottom: 25px; color: #666;">Pelajari informasi penting mengenai pengertian, penyebab, dampak, serta langkah penanggulangan banjir.</p>
 
@@ -68,7 +67,6 @@ $result = mysqli_query($koneksi, $query);
                             <img src="uploads/<?= htmlspecialchars($row['gambar']); ?>" alt="<?= htmlspecialchars($row['judul']); ?>">
                         <?php endif; ?>
                         <span class="badge">Materi</span>
->>>>>>> f6950a2e4703be154e019933e94878730adeef34
                         <h3><?= htmlspecialchars($row['judul']); ?></h3>
                         <p><?= nl2br(htmlspecialchars($row['isi_teks'])); ?></p>
                     </div>
@@ -83,7 +81,7 @@ $result = mysqli_query($koneksi, $query);
             <p style="font-size: 16px; color: var(--muted);">Topik materi yang Anda cari tidak ditemukan. Coba kata kunci lainnya.</p>
         </div>
                 <p>Belum ada data materi yang tersedia saat ini.</p>
-            <?php endif; ?>
+                <?php endif; ?>
         </div>
     </div>
 

@@ -1027,7 +1027,7 @@ footer a {
         justify-content: center;
         text-align: center;
     }
-=======
+
     background-color: #dcfce7;
     color: #166534;
     border: 1px solid #bbf7d0;
@@ -1040,5 +1040,4 @@ footer {
     margin-top: 40px;
     color: #777;
     font-size: 13px;
->>>>>>> f6950a2e4703be154e019933e94878730adeef34
 }
