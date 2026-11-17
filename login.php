@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'koneksi.php';
 
 // Jika sudah login, langsung alihkan
@@ -42,6 +43,10 @@ if (isset($_POST['login'])) {
             }
         } else {
             $pesan_error = "Username tidak terdaftar dalam sistem!";
+                $pesan_error = "Password salah!";
+            }
+        } else {
+            $pesan_error = "Username tidak ditemukan!";
         }
     }
 }
@@ -52,6 +57,7 @@ if (isset($_POST['login'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Masuk - Edukasi Bencana Banjir</title>
+    <title>Masuk - Edukasi Banjir</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -63,6 +69,8 @@ if (isset($_POST['login'])) {
             <h2>Masuk ke Portal</h2>
             <p class="subtitle">Gunakan akun Anda untuk mengakses fitur sistem edukasi.</p>
 
+            <h2>Masuk ke Akun</h2>
+
             <?php if (!empty($pesan_error)): ?>
                 <div class="alert alert-danger"><?= $pesan_error; ?></div>
             <?php endif; ?>
@@ -71,6 +79,8 @@ if (isset($_POST['login'])) {
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" name="username" id="username" placeholder="Masukkan username Anda" required autofocus>
+
+                    <input type="text" name="username" id="username" placeholder="Masukkan username" required>
                 </div>
 
                 <div class="form-group">
@@ -89,6 +99,12 @@ if (isset($_POST['login'])) {
 
             <p style="text-align: center; margin-top: 18px; font-size: 14px; color: var(--muted);">
                 Belum memiliki akun? <a href="register.php" style="color: var(--primary); font-weight: 600;">Daftar Akun Baru</a>
+
+                <button type="submit" name="login" class="btn btn-block">Masuk</button>
+            </form>
+
+            <p style="text-align: center; margin-top: 15px; font-size: 14px;">
+                Belum punya akun? <a href="register.php">Daftar sekarang</a>
             </p>
         </div>
     </div>

@@ -9,7 +9,11 @@ $result = mysqli_query($koneksi, $query);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Studi Kasus Banjir di Indonesia</title>
+=======
+    <title>Kasus Kejadian Banjir di Indonesia</title>
+>>>>>>> f6950a2e4703be154e019933e94878730adeef34
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,6 +21,7 @@ $result = mysqli_query($koneksi, $query);
     <?php include 'navbar.php'; ?>
 
     <div class="container">
+<<<<<<< HEAD
         <!-- Header -->
         <div style="margin-bottom: 24px;">
             <h1 style="color: var(--primary); font-size: 26px; font-weight: 800;">Studi Kasus Banjir di Indonesia</h1>
@@ -67,12 +72,34 @@ $result = mysqli_query($koneksi, $query);
         <div id="noKasusMatch" style="display: none; text-align: center; padding: 40px; background: #fff; border-radius: var(--radius-md); border: 1px dashed var(--border); margin-top: 20px;">
             <p style="font-size: 16px; color: var(--muted);">Tidak ditemukan catatan kasus banjir dengan kata kunci tersebut.</p>
         </div>
+=======
+        <h2 style="margin-bottom: 10px; color: #1e3a8a;">Contoh Kasus Banjir di Indonesia</h2>
+        <p style="margin-bottom: 25px; color: #666;">Daftar peristiwa banjir bersejarah di berbagai wilayah Indonesia sebagai bahan pembelajaran dan refleksi bersama.</p>
+
+        <div class="card-grid">
+            <?php if (mysqli_num_rows($result) > 0): ?>
+                <?php while ($row = mysqli_fetch_assoc($result)): ?>
+                    <div class="card">
+                        <?php if (!empty($row['gambar']) && file_exists('uploads/' . $row['gambar'])): ?>
+                            <img src="uploads/<?= htmlspecialchars($row['gambar']); ?>" alt="<?= htmlspecialchars($row['judul']); ?>">
+                        <?php endif; ?>
+                        <span class="badge" style="background-color: #fef3c7; color: #b45309;">Kasus Indonesia</span>
+                        <h3><?= htmlspecialchars($row['judul']); ?></h3>
+                        <p><?= nl2br(htmlspecialchars($row['isi_teks'])); ?></p>
+                    </div>
+                <?php endwhile; ?>
+            <?php else: ?>
+                <p>Belum ada data kasus banjir yang tersedia saat ini.</p>
+            <?php endif; ?>
+        </div>
+>>>>>>> f6950a2e4703be154e019933e94878730adeef34
     </div>
 
     <footer>
         <p>&copy; <?= date('Y'); ?> Portal Edukasi Bencana Banjir.</p>
     </footer>
 
+<<<<<<< HEAD
     <script>
     function filterKasus() {
         const query = document.getElementById('kasusSearch').value.toLowerCase().trim();
@@ -109,5 +136,7 @@ $result = mysqli_query($koneksi, $query);
     }
     </script>
 
+=======
+>>>>>>> f6950a2e4703be154e019933e94878730adeef34
 </body>
 </html>

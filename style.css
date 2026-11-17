@@ -85,6 +85,21 @@ body {
     max-width: 1100px;
     margin: 0 auto;
     padding: 14px 20px;
+
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navigasi */
+.navbar {
+    background-color: #1e3a8a;
+    color: #fff;
+    padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -422,6 +437,69 @@ body {
 .card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-md);
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.navbar .btn-logout {
+    background-color: #dc2626;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+/* Kontainer Utama */
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Banner / Hero Home */
+.hero {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    color: #1e3a8a;
+    margin-bottom: 15px;
+}
+
+/* Daftar Kartu Materi & Kasus */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 20px;
 }
 
 .card img {
@@ -430,6 +508,9 @@ body {
     object-fit: cover;
     border-radius: var(--radius-sm);
     margin-bottom: 14px;
+
+    border-radius: 4px;
+    margin-bottom: 15px;
 }
 
 .card .badge {
@@ -667,6 +748,48 @@ body {
 
 .form-group {
     margin-bottom: 18px;
+
+    background-color: #e0f2fe;
+    color: #0369a1;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.card p {
+    color: #555;
+    font-size: 14px;
+}
+
+/* Form Login, Register, & Admin */
+.form-box {
+    background-color: #fff;
+    max-width: 450px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.form-box-large {
+    max-width: 700px;
+}
+
+.form-box h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #1e3a8a;
+}
+
+.form-group {
+    margin-bottom: 15px;
 }
 
 .form-group label {
@@ -675,6 +798,9 @@ body {
     font-weight: 600;
     font-size: 13.5px;
     color: var(--dark);
+
+    font-weight: bold;
+    font-size: 14px;
 }
 
 .form-group input,
@@ -695,6 +821,11 @@ body {
     outline: none;
     border-color: var(--accent);
     box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
 }
 
 .form-group textarea {
@@ -711,6 +842,52 @@ body {
     border: 1px solid var(--border);
     padding: 16px;
     box-shadow: var(--shadow-sm);
+    height: 120px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #1e3a8a;
+    color: #fff;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background-color: #1d4ed8;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.btn-danger {
+    background-color: #dc2626;
+}
+
+.btn-danger:hover {
+    background-color: #b91c1c;
+}
+
+.btn-warning {
+    background-color: #d97706;
+}
+
+.btn-warning:hover {
+    background-color: #b45309;
+}
+
+/* Tabel Admin */
+.table-responsive {
+    overflow-x: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 15px;
 }
 
 table {
@@ -724,6 +901,10 @@ table td {
     padding: 12px 14px;
     text-align: left;
     font-size: 13.5px;
+    border: 1px solid #eee;
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
 }
 
 table th {
@@ -742,6 +923,13 @@ table tr:hover {
 table img {
     width: 75px;
     height: 52px;
+
+    color: #333;
+}
+
+table img {
+    width: 70px;
+    height: 50px;
     object-fit: cover;
     border-radius: 4px;
 }
@@ -759,6 +947,17 @@ table img {
 
 .alert-danger {
     background-color: #fef2f2;
+
+/* Pesan Notifikasi */
+.alert {
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.alert-danger {
+    background-color: #fee2e2;
     color: #991b1b;
     border: 1px solid #fecaca;
 }
@@ -828,4 +1027,18 @@ footer a {
         justify-content: center;
         text-align: center;
     }
+=======
+    background-color: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    color: #777;
+    font-size: 13px;
+>>>>>>> f6950a2e4703be154e019933e94878730adeef34
 }
