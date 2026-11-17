@@ -198,6 +198,6 @@ $query_kasus = mysqli_query($koneksi, "SELECT * FROM artikel WHERE kategori = 'K
         });
     }
     </script>
-
+    
 </body>
 </html>
