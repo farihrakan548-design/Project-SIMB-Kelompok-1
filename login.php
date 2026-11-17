@@ -1,5 +1,4 @@
 <?php
-session_start();
 include 'koneksi.php';
 
 // Jika sudah login, langsung alihkan
@@ -39,10 +38,10 @@ if (isset($_POST['login'])) {
                 }
                 exit;
             } else {
-                $pesan_error = "Password salah!";
+                $pesan_error = "Password yang Anda masukkan salah!";
             }
         } else {
-            $pesan_error = "Username tidak ditemukan!";
+            $pesan_error = "Username tidak terdaftar dalam sistem!";
         }
     }
 }
@@ -52,7 +51,7 @@ if (isset($_POST['login'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Masuk - Edukasi Banjir</title>
+    <title>Masuk - Edukasi Bencana Banjir</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -61,7 +60,8 @@ if (isset($_POST['login'])) {
 
     <div class="container">
         <div class="form-box">
-            <h2>Masuk ke Akun</h2>
+            <h2>Masuk ke Portal</h2>
+            <p class="subtitle">Gunakan akun Anda untuk mengakses fitur sistem edukasi.</p>
 
             <?php if (!empty($pesan_error)): ?>
                 <div class="alert alert-danger"><?= $pesan_error; ?></div>
@@ -70,7 +70,7 @@ if (isset($_POST['login'])) {
             <form action="" method="POST">
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" name="username" id="username" placeholder="Masukkan username" required>
+                    <input type="text" name="username" id="username" placeholder="Masukkan username Anda" required autofocus>
                 </div>
 
                 <div class="form-group">
@@ -78,11 +78,17 @@ if (isset($_POST['login'])) {
                     <input type="password" name="password" id="password" placeholder="Masukkan password" required>
                 </div>
 
-                <button type="submit" name="login" class="btn btn-block">Masuk</button>
+                <button type="submit" name="login" class="btn btn-block">Masuk Sekarang</button>
             </form>
 
-            <p style="text-align: center; margin-top: 15px; font-size: 14px;">
-                Belum punya akun? <a href="register.php">Daftar sekarang</a>
+            <div style="background: #f8fafc; border: 1px dashed var(--border); border-radius: var(--radius-sm); padding: 12px; margin-top: 20px; font-size: 13px; color: var(--muted);">
+                <strong>Akun Pengujian Demo:</strong><br>
+                • Admin: <code>admin</code> | pass: <code>admin123</code><br>
+                • Warga: <code>user</code> | pass: <code>user123</code>
+            </div>
+
+            <p style="text-align: center; margin-top: 18px; font-size: 14px; color: var(--muted);">
+                Belum memiliki akun? <a href="register.php" style="color: var(--primary); font-weight: 600;">Daftar Akun Baru</a>
             </p>
         </div>
     </div>
