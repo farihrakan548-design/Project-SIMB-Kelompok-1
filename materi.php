@@ -9,11 +9,7 @@ $result = mysqli_query($koneksi, $query);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Materi Edukasi Bencana Banjir</title>
-
-    <title>Materi Edukasi Banjir</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,7 +17,6 @@ $result = mysqli_query($koneksi, $query);
     <?php include 'navbar.php'; ?>
 
     <div class="container">
-
         <!-- Header Halaman -->
         <div style="margin-bottom: 24px;">
             <h1 style="color: var(--primary); font-size: 26px; font-weight: 800;">Materi Edukasi Bencana Banjir</h1>
@@ -56,32 +51,17 @@ $result = mysqli_query($koneksi, $query);
                             <span style="font-size: 12px; color: var(--muted);">ID #<?= $row['id']; ?></span>
                         </div>
 
-        <h2 style="margin-bottom: 10px; color: #1e3a8a;">Materi Edukasi Bencana Banjir</h2>
-        <p style="margin-bottom: 25px; color: #666;">Pelajari informasi penting mengenai pengertian, penyebab, dampak, serta langkah penanggulangan banjir.</p>
-
-        <div class="card-grid">
-            <?php if (mysqli_num_rows($result) > 0): ?>
-                <?php while ($row = mysqli_fetch_assoc($result)): ?>
-                    <div class="card">
-                        <?php if (!empty($row['gambar']) && file_exists('uploads/' . $row['gambar'])): ?>
-                            <img src="uploads/<?= htmlspecialchars($row['gambar']); ?>" alt="<?= htmlspecialchars($row['judul']); ?>">
-                        <?php endif; ?>
-                        <span class="badge">Materi</span>
                         <h3><?= htmlspecialchars($row['judul']); ?></h3>
                         <p><?= nl2br(htmlspecialchars($row['isi_teks'])); ?></p>
                     </div>
                 <?php endwhile; ?>
             <?php else: ?>
-
                 <p style="color: var(--muted); grid-column: 1/-1;">Belum ada materi yang ditambahkan.</p>
             <?php endif; ?>
         </div>
 
         <div id="noMatchMessage" style="display: none; text-align: center; padding: 40px; background: #fff; border-radius: var(--radius-md); border: 1px dashed var(--border); margin-top: 20px;">
             <p style="font-size: 16px; color: var(--muted);">Topik materi yang Anda cari tidak ditemukan. Coba kata kunci lainnya.</p>
-        </div>
-                <p>Belum ada data materi yang tersedia saat ini.</p>
-                <?php endif; ?>
         </div>
     </div>
 

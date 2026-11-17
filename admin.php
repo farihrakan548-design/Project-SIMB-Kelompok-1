@@ -1,6 +1,4 @@
 <?php
-
-session_start();
 include 'koneksi.php';
 
 // Proteksi halaman: hanya admin yang boleh masuk
@@ -25,8 +23,6 @@ $count_kasus = mysqli_fetch_assoc($q_kasus)['jml'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel Pengelolaan Konten - Edukasi Banjir</title>
-
-    <title>Panel Admin - Kelola Materi & Kasus</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -34,7 +30,6 @@ $count_kasus = mysqli_fetch_assoc($q_kasus)['jml'];
     <?php include 'navbar.php'; ?>
 
     <div class="container">
-
         <!-- Header Panel Admin -->
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 15px;">
             <div>
@@ -58,13 +53,6 @@ $count_kasus = mysqli_fetch_assoc($q_kasus)['jml'];
                 <div style="font-size: 13px; color: var(--muted); font-weight: 600;">KASUS INDONESIA</div>
                 <div style="font-size: 28px; font-weight: 800; color: var(--warning); margin-top: 4px;"><?= $count_kasus; ?></div>
             </div>
-
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-            <div>
-                <h2>Panel Pengelolaan Data</h2>
-                <p style="color: #666;">Kelola konten materi edukasi dan contoh kasus banjir.</p>
-            </div>
-            <a href="tambah.php" class="btn">+ Tambah Data Baru</a>
         </div>
 
         <?php if (isset($_GET['pesan'])): ?>
@@ -74,8 +62,6 @@ $count_kasus = mysqli_fetch_assoc($q_kasus)['jml'];
                 <div class="alert alert-success">Perubahan data berhasil disimpan!</div>
             <?php elseif ($_GET['pesan'] === 'hapus_sukses'): ?>
                 <div class="alert alert-success">Data berhasil dihapus dari sistem!</div>
-
-                <div class="alert alert-success">Data berhasil dihapus!</div>
             <?php endif; ?>
         <?php endif; ?>
 
@@ -89,10 +75,6 @@ $count_kasus = mysqli_fetch_assoc($q_kasus)['jml'];
                         <th style="width: 120px;">Kategori</th>
                         <th>Isi Singkat</th>
                         <th style="width: 140px; text-align: center;">Aksi</th>
-                        <th>Judul</th>
-                        <th style="width: 100px;">Kategori</th>
-                        <th>Isi Singkat</th>
-                        <th style="width: 150px; text-align: center;">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -105,8 +87,6 @@ $count_kasus = mysqli_fetch_assoc($q_kasus)['jml'];
                                         <img src="uploads/<?= htmlspecialchars($row['gambar']); ?>" alt="Foto">
                                     <?php else: ?>
                                         <span style="color: var(--muted); font-size: 12px; background: #f1f5f9; padding: 4px 8px; border-radius: 4px; display: inline-block;">Tanpa Foto</span>
-
-                                        <span style="color: #999; font-size: 12px;">Tanpa Foto</span>
                                     <?php endif; ?>
                                 </td>
                                 <td><strong><?= htmlspecialchars($row['judul']); ?></strong></td>
@@ -125,27 +105,12 @@ $count_kasus = mysqli_fetch_assoc($q_kasus)['jml'];
                                         <a href="edit.php?id=<?= $row['id']; ?>" class="btn btn-warning" style="padding: 5px 10px; font-size: 12px;">Edit</a>
                                         <a href="hapus.php?id=<?= $row['id']; ?>" class="btn btn-danger" style="padding: 5px 10px; font-size: 12px;" onclick="return confirm('Apakah Anda yakin ingin menghapus artikel ini?');">Hapus</a>
                                     </div>
-
-                                        <span class="badge">Materi</span>
-                                    <?php else: ?>
-                                        <span class="badge" style="background-color: #fef3c7; color: #b45309;">Kasus</span>
-                                    <?php endif; ?>
-                                </td>
-                                <td>
-                                    <?= htmlspecialchars(substr($row['isi_teks'], 0, 100)); ?>...
-                                </td>
-                                <td style="text-align: center;">
-                                    <a href="edit.php?id=<?= $row['id']; ?>" class="btn btn-warning" style="padding: 5px 10px; font-size: 12px;">Edit</a>
-                                    <a href="hapus.php?id=<?= $row['id']; ?>" class="btn btn-danger" style="padding: 5px 10px; font-size: 12px;" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">Hapus</a>
- 
                                 </td>
                             </tr>
                         <?php endwhile; ?>
                     <?php else: ?>
                         <tr>
                             <td colspan="6" style="text-align: center; color: var(--muted); padding: 30px;">Belum ada artikel yang diinputkan.</td>
-
-                            <td colspan="6" style="text-align: center; color: #888;">Belum ada data artikel.</td>
                         </tr>
                     <?php endif; ?>
                 </tbody>
