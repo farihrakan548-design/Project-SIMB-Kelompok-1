@@ -17,13 +17,11 @@ $result = mysqli_query($koneksi, $query);
     <?php include 'navbar.php'; ?>
 
     <div class="container">
-        <!-- Header Halaman -->
         <div style="margin-bottom: 24px;">
             <h1 style="color: var(--primary); font-size: 26px; font-weight: 800;">Materi Edukasi Bencana Banjir</h1>
             <p style="color: var(--muted); font-size: 15px; margin-top: 4px;">Panduan komprehensif mulai dari pemahaman konsep dasar, faktor pemicu, dampak lingkungan, hingga strategi mitigasi mandiri.</p>
         </div>
 
-        <!-- Filter & Pencarian Cepat Interaktif -->
         <div class="toolbar-filter">
             <div class="search-input-wrap">
                 <input type="text" id="materiSearch" placeholder="Cari topik materi (misal: penyebab, mitigasi, dampak)..." onkeyup="filterMateri()">
@@ -37,7 +35,6 @@ $result = mysqli_query($koneksi, $query);
             </div>
         </div>
 
-        <!-- Grid Kartu Materi -->
         <div class="card-grid" id="materiGrid">
             <?php if (mysqli_num_rows($result) > 0): ?>
                 <?php while ($row = mysqli_fetch_assoc($result)): ?>
@@ -69,9 +66,7 @@ $result = mysqli_query($koneksi, $query);
         <p>&copy; <?= date('Y'); ?> Portal Edukasi Bencana Banjir.</p>
     </footer>
 
-    <!-- JavaScript Interaktif -->
     <script>
-    // 1. Pencarian Real-time
     function filterMateri() {
         const query = document.getElementById('materiSearch').value.toLowerCase().trim();
         const cards = document.querySelectorAll('.materi-item');
@@ -93,7 +88,6 @@ $result = mysqli_query($koneksi, $query);
         noMatch.style.display = (visibleCount === 0) ? 'block' : 'none';
     }
 
-    // 2. Filter Chip Tombol Cepat
     function filterByChip(keyword, btn) {
         document.querySelectorAll('.chip-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');

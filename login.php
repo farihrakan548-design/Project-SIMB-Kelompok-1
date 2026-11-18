@@ -1,7 +1,6 @@
 <?php
 include 'koneksi.php';
 
-// Jika sudah login, langsung alihkan
 if (isset($_SESSION['user_id'])) {
     if ($_SESSION['role'] === 'admin') {
         header("Location: admin.php");

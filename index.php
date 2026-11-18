@@ -18,7 +18,6 @@ $query_kasus = mysqli_query($koneksi, "SELECT * FROM artikel WHERE kategori = 'K
     <?php include 'navbar.php'; ?>
 
     <div class="container">
-        <!-- Hero Banner Utama -->
         <div class="hero-box">
             <span class="hero-tag">KESIAPSIAGAAN MASYARAKAT</span>
             <h1>Kenali Potensi Banjir di Sekitarmu, Selamatkan Keluarga & Lingkungan</h1>
@@ -29,7 +28,6 @@ $query_kasus = mysqli_query($koneksi, "SELECT * FROM artikel WHERE kategori = 'K
             </div>
         </div>
 
-        <!-- Panduan Tindakan 3 Fase Bencana (Tabs) -->
         <div class="tabs-section">
             <h2 style="font-size: 20px; color: var(--primary); margin-bottom: 6px;">Panduan Tindakan 3 Fase Banjir</h2>
             <p style="font-size: 14px; color: var(--muted); margin-bottom: 18px;">Pilih tab di bawah untuk melihat rincian langkah keselamatan penting berdasarkan fase bencana.</p>
@@ -40,7 +38,6 @@ $query_kasus = mysqli_query($koneksi, "SELECT * FROM artikel WHERE kategori = 'K
                 <button class="tab-btn" onclick="switchTab('tab-pasca')">3. Setelah Air Surut (Pemulihan)</button>
             </div>
 
-            <!-- Panel 1: Pra-Bencana -->
             <div id="tab-pra" class="tab-panel active">
                 <div class="step-list">
                     <div class="step-card">
@@ -58,7 +55,6 @@ $query_kasus = mysqli_query($koneksi, "SELECT * FROM artikel WHERE kategori = 'K
                 </div>
             </div>
 
-            <!-- Panel 2: Saat Banjir -->
             <div id="tab-saat" class="tab-panel">
                 <div class="step-list">
                     <div class="step-card" style="border-left-color: var(--danger);">
@@ -76,7 +72,6 @@ $query_kasus = mysqli_query($koneksi, "SELECT * FROM artikel WHERE kategori = 'K
                 </div>
             </div>
 
-            <!-- Panel 3: Pasca Banjir -->
             <div id="tab-pasca" class="tab-panel">
                 <div class="step-list">
                     <div class="step-card" style="border-left-color: var(--warning);">
@@ -95,7 +90,6 @@ $query_kasus = mysqli_query($koneksi, "SELECT * FROM artikel WHERE kategori = 'K
             </div>
         </div>
 
-        <!-- Cuplikan Materi Terkini dari Database -->
         <div style="margin-bottom: 35px;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                 <div>
@@ -122,7 +116,6 @@ $query_kasus = mysqli_query($koneksi, "SELECT * FROM artikel WHERE kategori = 'K
             </div>
         </div>
 
-        <!-- Pusat Nomor Darurat Indonesia -->
         <div style="background: #fff; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 24px; box-shadow: var(--shadow-sm);">
             <h2 style="font-size: 20px; color: var(--danger); margin-bottom: 4px;">Pusat Nomor Darurat Indonesia (Bebas Pulsa)</h2>
             <p style="font-size: 14px; color: var(--muted); margin-bottom: 15px;">Simpan nomor ini di ponsel Anda untuk keadaan darurat saat musim penghujan.</p>
@@ -170,9 +163,7 @@ $query_kasus = mysqli_query($koneksi, "SELECT * FROM artikel WHERE kategori = 'K
         <p>&copy; <?= date('Y'); ?> <strong>Portal Edukasi & Kesiapsiagaan Bencana Banjir</strong>. Dikembangkan untuk edukasi dan keselamatan publik.</p>
     </footer>
 
-    <!-- Script Interaktif Sederhana -->
     <script>
-    // 1. Logika Tab Fase Bencana
     function switchTab(tabId) {
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
         document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
@@ -185,7 +176,6 @@ $query_kasus = mysqli_query($koneksi, "SELECT * FROM artikel WHERE kategori = 'K
         event.currentTarget.classList.add('active');
     }
 
-    // 2. Salin Nomor Darurat
     function copyNumber(num, btn) {
         navigator.clipboard.writeText(num).then(() => {
             const originalText = btn.innerHTML;

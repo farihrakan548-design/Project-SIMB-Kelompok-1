@@ -17,13 +17,11 @@ $result = mysqli_query($koneksi, $query);
     <?php include 'navbar.php'; ?>
 
     <div class="container">
-        <!-- Header -->
         <div style="margin-bottom: 24px;">
             <h1 style="color: var(--primary); font-size: 26px; font-weight: 800;">Studi Kasus Banjir di Indonesia</h1>
             <p style="color: var(--muted); font-size: 15px; margin-top: 4px;">Kilas balik berbagai peristiwa banjir besar yang pernah terjadi di Indonesia sebagai bahan evaluasi, pelajaran berharga, dan mitigasi di masa depan.</p>
         </div>
 
-        <!-- Filter & Pencarian Cepat -->
         <div class="toolbar-filter">
             <div class="search-input-wrap">
                 <input type="text" id="kasusSearch" placeholder="Cari kejadian banjir (misal: Jakarta, Sentani, 2020)..." onkeyup="filterKasus()">
@@ -36,7 +34,6 @@ $result = mysqli_query($koneksi, $query);
             </div>
         </div>
 
-        <!-- Grid Kartu Kasus -->
         <div class="card-grid" id="kasusGrid">
             <?php if (mysqli_num_rows($result) > 0): ?>
                 <?php while ($row = mysqli_fetch_assoc($result)): ?>

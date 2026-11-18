@@ -2,7 +2,6 @@
 session_start();
 include 'koneksi.php';
 
-// Proteksi halaman
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
     header("Location: login.php");
     exit;
@@ -19,7 +18,6 @@ if (isset($_POST['simpan'])) {
     if (empty($judul) || empty($kategori) || empty($isi_teks)) {
         $pesan_error = "Semua kolom teks wajib diisi!";
     } else {
-        // Proses upload gambar jika ada
         if (isset($_FILES['gambar']) && $_FILES['gambar']['error'] === 0) {
             $nama_file = $_FILES['gambar']['name'];
             $ukuran_file = $_FILES['gambar']['size'];
@@ -38,7 +36,6 @@ if (isset($_POST['simpan'])) {
             }
         }
 
-        // Simpan ke database jika tidak ada error
         if (empty($pesan_error)) {
             $query = "INSERT INTO artikel (judul, kategori, isi_teks, gambar) VALUES ('$judul', '$kategori', '$isi_teks', '$nama_gambar')";
             if (mysqli_query($koneksi, $query)) {
